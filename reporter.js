@@ -143,7 +143,9 @@ var self = module.exports = {
             }
 
         }
-        done();
+        if (done !== undefined) {
+	    done()
+	}
     },
     parse: function (str) {
         return _.isNaN(str) ? 0 : parseInt(str, 10);
